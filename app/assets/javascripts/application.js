@@ -12,5 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require js-routes
+
+// Rails Assets
+//= require angular
+
+//= require moment
+//= require moment/locale/zh-tw
+//= require angular-moment
+
 //= require_tree .

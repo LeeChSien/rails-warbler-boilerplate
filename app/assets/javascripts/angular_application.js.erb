@@ -1,0 +1,21 @@
+var angularApplication = (function() {
+
+  var set_rails_csrf = function(app) {
+    app.config(['$httpProvider', function($httpProvider) {
+      $httpProvider.defaults.headers.common['X-CSRF-Token'] =
+      $('meta[name=csrf-token]').attr('content');
+    }]);
+  }
+
+  return {
+    module: function(name, modules) {
+      var new_app = angular.module(name, modules.concat([
+
+      ]));
+
+      set_rails_csrf(new_app);
+
+      return new_app;
+    }
+  };
+})();

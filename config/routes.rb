@@ -1,9 +1,17 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'main#index'
+
+  get    'create_job'      => 'main#create_job',      as: :create_job
+  delete 'delete_all_jobs' => 'main#delete_all_jobs', as: :delete_all_jobs
+  get    'list_jobs'       => 'main#list_jobs',       as: :list_jobs
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

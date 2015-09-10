@@ -1,3 +1,4 @@
+source 'https://rails-assets.org'
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,7 +15,7 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+# gem 'coffee-rails', '~> 4.1.0'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :mri
@@ -38,8 +39,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# if you require 'sinatra' you get the DSL extended to Object
+gem 'sinatra', :require => nil
 # Simple, efficient background processing for Ruby.
 gem 'sidekiq'
+
+# A scheduling add-on for Sidekiq.
+gem 'sidekiq-cron'
 
 # Thread-ed Background Workers on top of JRuby::Rack
 gem 'jruby-rack-worker', :platform => :jruby
@@ -49,6 +55,16 @@ gem 'warbler', :platform => :jruby
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Official Sass port of Bootstrap 2 and 3.
+gem 'bootstrap-sass'
+
+# Generates javascript file that defines all Rails named routes as javascript helpers
+gem "js-routes"
+
+# AngularJS
+gem 'rails-assets-angular'
+gem 'rails-assets-angular-moment'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

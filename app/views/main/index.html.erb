@@ -1,2 +1,31 @@
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
+<div ng-app="jobsApp" class="container">
+  <div ng-controller="jobsCtrl" class="col-md-6 col-md-offset-3">
+    <h2>Job List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-sm-2">Job ID</th>
+          <th class="col-sm-2">Status</th>
+          <th>Updated at</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="job in jobs">
+          <td>{{ job.id }}</td>
+          <td>
+            <span ng-class="(job.status == 'done') ? 'label label-success' : 'label label-warning'">
+              {{job.status}}
+            </span>
+          </td>
+          <td><span am-time-ago="job.updated_at"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center">
+      <button class="btn btn-danger btn-large"
+        ng-click="delete_all_jobs()" ng-disabled="interacing">Delete all</button>
+      <button class="btn btn-primary btn-large"
+        ng-click="create_job()" ng-disabled="interacing">Create Job</button>
+    </div>
+  </div>
+</div>
