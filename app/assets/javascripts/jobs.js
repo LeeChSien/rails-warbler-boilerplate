@@ -12,9 +12,9 @@
       $scope.jobs = [];
 
       $scope.create_job = function() {
-        $scope.creating = true;
+        $scope.interact = true;
         $http.get(Routes.create_job_path()).success(function(data) {
-          $scope.creating = false;
+          $scope.interact = false;
           $scope.jobs = data.jobs;
         });
       };
@@ -32,7 +32,7 @@
         $http.get(Routes.list_jobs_path()).success(function(data) {
           $scope.jobs = data.jobs;
         });
-      }, 1000);
+      }, 3000);
     }
   ]);
 })();

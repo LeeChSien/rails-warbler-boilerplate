@@ -9,13 +9,9 @@ class Job < ActiveRecord::Base
     set_status!('done')
   end
 
-  def self.produce
-    new_job = self.new
-    new_job.save
-
+  def work!
     sleep 4
-
-    new_job.done!
+    self.done!
   end
 
   private

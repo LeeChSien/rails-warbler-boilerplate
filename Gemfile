@@ -42,16 +42,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # if you require 'sinatra' you get the DSL extended to Object
 gem 'sinatra', :require => nil
 # Simple, efficient background processing for Ruby.
-gem 'sidekiq'
-
-# A scheduling add-on for Sidekiq.
-gem 'sidekiq-cron'
+gem 'sidekiq', "2.17.8"
 
 # Thread-ed Background Workers on top of JRuby::Rack
 gem 'jruby-rack-worker', :platform => :jruby
 
 # warbler
-gem 'warbler', :platform => :jruby
+gem "warbler"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

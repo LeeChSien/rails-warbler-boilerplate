@@ -31,5 +31,5 @@ Warbler::Config.new do |config|
   config.compiled_ruby_files = FileList['app/**/*.rb']
 
   # When set it specify the bytecode version for compiled class files
-  config.bytecode_version = "1.7"
+  # config.bytecode_version = "1.7"
 end
